@@ -64,8 +64,8 @@ body {
         &.sign_in {
           padding: 55px 35px 50px 35px;
           background:
-            image-url('up_cover.svg') top no-repeat,
-            image-url('bottom_cover.svg') bottom no-repeat,
+            // image-url('up_cover.svg') top no-repeat,
+            // image-url('bottom_cover.svg') bottom no-repeat,
             image-url('#{$theme-type}/clouds.png') top 25px left 20px no-repeat,
             image-url('#{$theme-type}/rainbow.png') bottom -20px right -23px no-repeat;
           background-color: $bg-color;
@@ -74,8 +74,8 @@ body {
           // padding: 35px 35px 15px 35px;
           padding: 35px 35px 35px 35px; //此部份是 Zyxel 在 APP 版面要拿掉 logo 與 title 而作的調整
           background:
-            image-url('up_cover.svg') top no-repeat,
-            image-url('#{$theme-type}/clouds.png') top 25px left 20px no-repeat,
+            // image-url('up_cover.svg') top no-repeat,
+            // image-url('#{$theme-type}/clouds.png') top 25px left 20px no-repeat,
             image-url('#{$theme-type}/rainbow.png') bottom -38px right -23px no-repeat;
           background-color: $bg-color;
           min-height: 510px;
@@ -170,30 +170,30 @@ body {
 
 // 20170927 @media (max-width: 430px) 此部份是 Zyxel 在 APP 版面要拿掉 logo 與 title 而作的調整
 // 此段拿掉便會回復原狀
-@media (max-width: 430px)
-{
-  .logo {
-    display: none;
-  }
-  .title {
-    display: none;
-  }
-  .content {
-    .white_email {
-      top: 20px !important;
-    }
-    .content_wrapper {
-      &.sign_in {
-        margin-top: 20px;
-      }
-    }
-  }
-  .precontent {
-    .process_indicator_wrapper {
-      margin: auto;
-    }
-  }
-}
+// @media (max-width: 430px)
+// {
+//   .logo {
+//     display: none;
+//   }
+//   .title {
+//     display: none;
+//   }
+//   .content {
+//     .white_email {
+//       top: 20px !important;
+//     }
+//     .content_wrapper {
+//       &.sign_in {
+//         margin-top: 20px;
+//       }
+//     }
+//   }
+//   .precontent {
+//     .process_indicator_wrapper {
+//       margin: auto;
+//     }
+//   }
+// }
 
 @media (min-width: 411px) and (max-width: 430px) // iPhone6 Plus
 {
@@ -204,8 +204,8 @@ body {
       .content {
         .content_wrapper {
           &.normal {
-            // min-height: 83vh;
-            min-height: 90vh; //此部份是 Zyxel 在 APP 版面要拿掉 logo 與 title 而作的調整，83vh 是原本的
+            min-height: 83vh;
+            // min-height: 90vh; //此部份是 Zyxel 在 APP 版面要拿掉 logo 與 title 而作的調整，83vh 是原本的
           }
         }
       }
@@ -241,8 +241,9 @@ body {
         margin: 0px auto 0 auto;
       }
       .title {
+        margin: 0 auto;
         .title_sign_in {
-          margin: 0px auto 25px auto;
+          margin: -5px auto 0px auto;
         }
       }
       // 關掉陰影
@@ -251,10 +252,10 @@ body {
         font-size: 14px;
         .content_wrapper {
           &.sign_in {
-            padding: 55px 15px 30px 15px;
+            padding: 20px 15px 10px 15px;
             background:
-              image-url('up_cover.svg') top no-repeat,
-              image-url('bottom_cover.svg') bottom no-repeat,
+              // image-url('up_cover.svg') top no-repeat,
+              // image-url('bottom_cover.svg') bottom no-repeat,
               image-url('#{$theme-type}/clouds.png') top 25px left 20px no-repeat,
               image-url('#{$theme-type}/rainbow.png') bottom -30px right -23px no-repeat;
             background-color: $bg-color;
@@ -266,7 +267,13 @@ body {
         }
       }
       .oauth {
-        margin: 5px auto;
+        margin: 0px auto;
+        .or {
+          margin: 0px auto -10px auto;
+        }
+        .oauth_wrapper {
+          margin: 0px auto;
+        }
       }
       // .postcontent {
         .register {

@@ -2,7 +2,7 @@
   .title_sign_in
     = I18n.t('titles.sign_in')
 
-.white_email
+/ .white_email
 .content_wrapper.sign_in
   - unless Settings.environments.name == 'production'
     .env
@@ -38,7 +38,8 @@
         / .alert.alert-danger.alert-custom= simple_format flash[:error]
         .help-block= simple_format flash[:error]
     - else
-      .spacer{ :style => "height: 25px;" }
+      / .spacer{ :style => "height: 25px;" }
+      .spacer{ :style => "height: 0px;" }
     = f.button :submit, I18n.t('labels.sign_in'), class: 'btn-custom btn-block', data: { disable_with: I18n.t('labels.wait') }
 
 - content_for :postcontent do
