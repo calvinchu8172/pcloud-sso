@@ -13,7 +13,6 @@
   = simple_form_for resource, as: resource_name, url: registration_url(resource_name), method: :post do |f|
     = f.input :email, label: I18n.t("user.labels.email"), wrapper_html: { class: 'has-feedback' } do
       = f.input_field :email, placeholder: I18n.t('user.labels.email_suggestion'), autofocus: true, class: 'form-control', required: true
-      / = content_tag 'span', image_tag("email-gray.png"), class: 'form-control-feedback'
     = f.input :password, label: I18n.t("user.labels.create_password"), wrapper_html: { class: 'has-feedback'} do
       = f.input_field :password, class: 'form-control add-padding-right', required: true, maxlength:14
       .show-password-wrapper
@@ -21,23 +20,12 @@
         .password-meter-anchor
       .password_suggestion
         = I18n.t("user.labels.password_suggestion")
-    / .show-password-wrapper
-    / 這是原本的 password meter 的顯示方式，若要看可以解除註解
-    / %div#password_meter
-
-    / 這是原本輸入 password confirmation，因為客戶只要單次輸入 password，若要看可以解除註解
-    / = f.input :password_confirmation, label: I18n.t("user.labels.password_confirmation"), wrapper_html: { class: 'has-feedback' } do
-    /   = f.input_field :password_confirmation, placeholder: I18n.t('user.labels.password'), class: 'form-control', required: true, maxlength:14
-    /   = content_tag 'span', image_tag("key-gray.png"), class: 'form-control-feedback'
-    / .show_password.btn.btn-custom.btn-block
-    /   %p= fa_icon('eye') + '  Show password'
 
     .recaptcha
       .row
         .col-xs-12.col-md-12
           = recaptcha_tags ajax: true, hl: locale
           - if flash[:error]
-            / .alert.alert-warning.alert-custom= flash[:error]
             .alert-custom= flash[:error]
 
     .terms_and_edm

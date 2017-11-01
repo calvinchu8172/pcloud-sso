@@ -50,11 +50,6 @@ body {
         position: relative;
       }
       .content_wrapper {
-        .env {
-          line-height: 0%;
-          float: right;
-          margin-top: -10px;
-        }
         .inner_title {
           h4 {
             font-weight: bold;
@@ -236,11 +231,13 @@ body {
 @media (max-width: 320px) // iPhone5, iPhone4
 {
   body {
+    font-size: 12px;
     .main {
       .logo {
-        margin: 0px auto 0 auto;
+        margin: -10px auto -10px auto;
       }
       .title {
+        font-size: 12px;
         margin: 0 auto;
         .title_sign_in {
           margin: -5px auto 0px auto;
@@ -249,14 +246,14 @@ body {
       // 關掉陰影
       box-shadow: 0px 0px 0px 0px;
       .content {
-        font-size: 14px;
+        font-size: 12px;
         .content_wrapper {
           &.sign_in {
-            padding: 20px 15px 10px 15px;
+            padding: 10px 15px 10px 15px;
             background:
               // image-url('up_cover.svg') top no-repeat,
               // image-url('bottom_cover.svg') bottom no-repeat,
-              image-url('#{$theme-type}/clouds.png') top 25px left 20px no-repeat,
+              image-url('#{$theme-type}/clouds.png') top -13px left 0px no-repeat,
               image-url('#{$theme-type}/rainbow.png') bottom -30px right -23px no-repeat;
             background-color: $bg-color;
           }
@@ -266,17 +263,21 @@ body {
           }
         }
       }
-      .oauth {
-        margin: 0px auto;
-        .or {
-          margin: 0px auto -10px auto;
-        }
-        .oauth_wrapper {
+      .postcontent {
+        min-height: 105px;
+        .oauth {
           margin: 0px auto;
+          .or {
+            font-size: 12px;
+            margin: 0px auto -10px auto;
+          }
+          .oauth_wrapper {
+            margin: 0px auto;
+            height: 30px;
+          }
         }
-      }
-      // .postcontent {
         .register {
+          margin-bottom: 0px;
           .new_register {
             padding-left: 15px;
           }
@@ -285,12 +286,13 @@ body {
           }
         }
         .locale_and_help {
+          height: 0px;
           margin-bottom: 0px;
           .locale {
             padding-left: 15px;
           }
         }
-      // }
+      } // postcontent
 
 
     }

@@ -57,6 +57,14 @@ form {
   @else { color: #f00; }
 }
 
+@media (max-width: 320px) // iPhone 5,4
+{
+  .help-block, .has-error .help-block {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
 .agree_note_box {
   padding: 0.9em;
   height: 250px;

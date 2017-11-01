@@ -3,46 +3,37 @@
     = I18n.t('titles.sign_in')
 
 / .white_email
+- unless Settings.environments.name == 'production'
+  .show_env
+    = "(#{Settings.environments.name})"
 .content_wrapper.sign_in
-  - unless Settings.environments.name == 'production'
-    .env
-      = "(#{Settings.environments.name})"
   = simple_form_for resource, as: resource_name, url: session_url(resource_name), method: :post do |f|
     = f.input :email, label: false, wrapper_html: { class: 'has-feedback' } do
       = f.input_field :email, placeholder: I18n.t('user.labels.email'), autofocus: true, class: 'form-control', required: true
-      / = content_tag 'span', fa_icon('envelope-o'), class: 'form-control-feedback'
       = content_tag 'span', image_tag("email-gray.png"), class: 'form-control-feedback'
     = f.input :password, label: false, wrapper_html: { class: 'has-feedback' } do
       = f.input_field :password, placeholder: I18n.t('user.labels.password'), class: 'form-control', required: true, maxlength:14
       .show-password-wrapper{:title => 'Show password'}
-      / = content_tag 'span', image_tag("eye-open.png"), class: 'form-control-feedback'
-    / .show-password-wrapper{:title => 'Show password'}
     = f.input :remember_me, label: false do
       = link_to I18n.t('labels.forgot_password'), new_user_password_url, target:'_blank', class: 'forgot-password'
       .remember-me
         .checkbox.checkbox-custom
           = f.check_box :remember_me
           = label_tag :remember_me, I18n.t('user.labels.remember_me')
-    / .flash-wrapper
     - if flash.present?
       - if flash[:success]
-        / .alert.alert-success.alert-custom= simple_format flash[:success]
         .help-block= simple_format flash[:success]
       - if flash[:notice]
-        / .alert.alert-info.alert-custom= simple_format flash[:notice]
         .help-block= simple_format flash[:notice]
       - if flash[:alert]
-        / .alert.alert-warning.alert-custom= simple_format flash[:alert]
         .help-block= simple_format flash[:alert]
       - if flash[:error]
-        / .alert.alert-danger.alert-custom= simple_format flash[:error]
         .help-block= simple_format flash[:error]
     - else
-      / .spacer{ :style => "height: 25px;" }
-      .spacer{ :style => "height: 0px;" }
+      .sign_in_spacer
     = f.button :submit, I18n.t('labels.sign_in'), class: 'btn-custom btn-block', data: { disable_with: I18n.t('labels.wait') }
 
-- content_for :postcontent do
+.postcontent
   .oauth
     .or
       = I18n.t("labels.or")
@@ -72,7 +63,6 @@
     .help.col-xs-6.col-sm-6.col-md-6.col-lg-6
       .help_wrapper
         = image_tag("#{theme}/icon-help.png")
-        / = link_to 'Help', '/help', target: "_blank"
         = link_to I18n.t('labels.help'), '#', data: { toggle: 'modal', target: '#help_dialog' }
 
   = render "help/help"

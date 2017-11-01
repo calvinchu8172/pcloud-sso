@@ -22,3 +22,12 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 320px)
+{
+  .show-password-wrapper {
+    width: 30px;
+    height: 30px;
+    top: -30px;
+  }
+}

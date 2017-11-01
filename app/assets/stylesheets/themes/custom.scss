@@ -9,6 +9,17 @@
   // letter-spacing: 1px;
 }
 
+@media (max-width: 320px)
+{
+  .btn-custom {
+    @include button-variant(#FFFFFF, $btn-color, $btn-color);
+    height: 30px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: bold;
+  }
+}
+
 .btn-auth-deny {
   // @include button-variant(#FFFFFF, transparent, transparent);
   height: 40px;
@@ -46,6 +57,17 @@
   }
 }
 
+@media (max-width: 320px)
+{
+  .btn-round {
+    width: 30px;
+    height: 30px;
+    &.google {
+      background: #dd4b39 image-url("google.png") no-repeat top 4px left 6px;
+    }
+  }
+}
+
 .btn-cancel {
   height: 34px;
   line-height: 34px;
@@ -58,6 +80,13 @@
   a:hover {
     color: darken(#fff, 10%);
     text-decoration: underline !important;
+  }
+}
+
+@media (max-width: 320px)
+{
+  .btn-cancel {
+    font-size: 12px;
   }
 }
 
@@ -86,6 +115,21 @@
   border: 0px;
 }
 
+@media (max-width: 320px)
+{
+  .form-control {
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
 .form-group {
   margin-bottom: 10px;
 }
@@ -97,10 +141,28 @@
   line-height: 45px;
 }
 
+@media (max-width: 320px)
+{
+  .form-control-feedback {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+
 .control-label {
   margin-left: 10px;
   font-size: 16px;
   font-weight: normal;
+}
+
+@media (max-width: 320px)
+{
+  .control-label {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: normal;
+  }
 }
 
 .display-block {
@@ -159,5 +221,16 @@ span.radio_button_gender {
     label {
       font-size: 12px;
     }
+  }
+}
+
+.sign_in_spacer {
+  height: 25px;
+}
+
+@media (max-width: 320px)
+{
+  .sign_in_spacer {
+    height: 0px;
   }
 }
