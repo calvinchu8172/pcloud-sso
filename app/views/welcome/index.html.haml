@@ -3,19 +3,15 @@
 .content_wrapper.normal
   .inner_title
     %h4
-      / = fa_icon('thumbs-o-up')
       = I18n.t("titles.welcome_to_sign_in")
 
     - if flash[:alert]
-      / %span.alert.alert-warning.alert-custom= flash[:alert]
       %span.help-block.alert-custom= flash[:alert]
     - elsif flash[:notice]
-      / %span.alert.alert-info.alert-custom= flash[:notice]
       %span.help-block.alert-custom= flash[:notice]
 
   .spacer{ :style => "height: 200px;" }
 
-  / - if user_signed_in? && !current_page?('/help') && confirmed_or_valid_unconfirmed_access? && !in_oauth_flow?
   - if user_signed_in? && !current_page?('/help') && confirmed_or_valid_unconfirmed_access?
     -  unless current_user.confirmed? || params["controller"] == "confirmations"
       = link_to I18n.t("labels.unverified"), new_user_confirmation_path, class: "btn btn-custom btn-block"

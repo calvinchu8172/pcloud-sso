@@ -30,5 +30,8 @@
         = yield :precontent
       .content
         = yield
+      - if current_path?(:sessions, [:new, :create])
+        .postcontent
+          = yield :postcontent
       %footer{ class: (current_path?(:sessions, [:new, :create]) ? 'sign_in' : 'normal') }
         = I18n.t('user.labels.copy_right', current_year: DateTime.now.year)

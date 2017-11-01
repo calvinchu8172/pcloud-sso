@@ -33,7 +33,7 @@
       .sign_in_spacer
     = f.button :submit, I18n.t('labels.sign_in'), class: 'btn-custom btn-block', data: { disable_with: I18n.t('labels.wait') }
 
-.postcontent
+- content_for :postcontent do
   .oauth
     .or
       = I18n.t("labels.or")
