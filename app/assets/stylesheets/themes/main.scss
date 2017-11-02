@@ -1,6 +1,8 @@
 body {
   // font-family: 'Open Sans', sans-serif, "微軟正黑體";
   font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif, "微軟正黑體";
+  font-size: 16px;
+
   .space {
     height: 50px;
   }
@@ -158,17 +160,23 @@ body {
 
 } // body
 
-@media (min-width: 411px) and (max-width: 430px) // iPhone6 Plus
+@media (min-width: 376px) and (max-width: 425px) // iPhone6 Plus
 {
   body {
+    font-size: 16px;
     .main {
+      .title {
+        font-size: 16px;
+      }
       // 關掉陰影
       box-shadow: 0px 0px 0px 0px;
       .content {
+        font-size: 16px;
         .content_wrapper {
           &.normal {
             min-height: 83vh;
             // min-height: 90vh; //此部份是 Zyxel 在 APP 版面要拿掉 logo 與 title 而作的調整，83vh 是原本的
+            padding: 35px;
           }
         }
       }

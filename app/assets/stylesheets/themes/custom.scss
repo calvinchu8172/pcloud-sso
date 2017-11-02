@@ -9,11 +9,9 @@
 @media (max-width: 320px)
 {
   .btn-custom {
-    @include button-variant(#FFFFFF, $btn-color, $btn-color);
     height: 30px;
     font-size: 12px;
     line-height: 20px;
-    font-weight: bold;
   }
 }
 
