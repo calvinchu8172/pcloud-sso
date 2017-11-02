@@ -2,6 +2,14 @@
   height: 200px;
 }
 
+@media (min-width: 321px) and (max-width: 375px)
+{
+  .inner_spacer {
+    height: 100px;
+  }
+}
+
+
 @media (max-width: 320px)
 {
   .inner_spacer {
