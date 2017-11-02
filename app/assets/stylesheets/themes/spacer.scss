@@ -1,0 +1,10 @@
+.inner_spacer {
+  height: 200px;
+}
+
+@media (max-width: 320px)
+{
+  .inner_spacer {
+    height: 0px;
+  }
+}

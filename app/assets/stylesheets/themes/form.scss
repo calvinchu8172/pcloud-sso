@@ -80,6 +80,13 @@ form {
   border-style: solid;
 }
 
+@media (max-width: 320px) // iPhone 5,4
+{
+  .agree_note_box {
+    font-size: 12px;
+  }
+}
+
 .profile_table {
   tr {
     height: 30px;
@@ -103,6 +110,7 @@ form {
   width: 100%;
   font-size: 12px;
   margin-bottom: 30px;
+  table-layout: fixed;
   tr {
     // width: 100%;
     // padding: 0 5px;
@@ -116,13 +124,15 @@ form {
       border-bottom-width: 1px;
       border-bottom-style: solid;
       border-bottom-color: #8c8c8c;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     th:first-child {
-      width: 20%;
+      width: 55%;
       // background-color: #f00;
     }
     th:nth-child(2) {
-      width: 40%;
+      width: 30%;
       // background-color: #0f0;
     }
     td {

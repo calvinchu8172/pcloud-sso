@@ -13,7 +13,7 @@
             -@pre_auth.scopes.each do |scope|
               %li= t scope, scope: [:doorkeeper, :scopes]
 
-  .spacer{ :style => "height: 180px;" }
+  .inner_spacer
 
   = form_tag oauth_authorization_path, method: :post do
     = hidden_field_tag :client_id, @pre_auth.client.uid

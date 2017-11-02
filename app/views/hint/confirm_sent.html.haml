@@ -12,10 +12,9 @@
 .content_wrapper.normal
   .inner_title
     %h4
-      / = fa_icon('check-circle-o')
       = I18n.t("devise.confirmations.resend")
     %p
       = I18n.t("devise.confirmations.confirm_sent")
-  .spacer{ :style => "height: 220px;" }
+  .inner_spacer
 
   = link_to I18n.t("labels.ok"), destroy_user_session_path, class: 'btn btn-custom btn-block'

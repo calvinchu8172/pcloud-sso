@@ -10,7 +10,7 @@
     - elsif flash[:notice]
       %span.help-block.alert-custom= flash[:notice]
 
-  .spacer{ :style => "height: 200px;" }
+  .inner_spacer
 
   - if user_signed_in? && !current_page?('/help') && confirmed_or_valid_unconfirmed_access?
     -  unless current_user.confirmed? || params["controller"] == "confirmations"

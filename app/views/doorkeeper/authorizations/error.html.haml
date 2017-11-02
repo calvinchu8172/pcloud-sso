@@ -8,6 +8,6 @@
   %p
     = @pre_auth.error_response.body[:error_description]
 
-  .spacer{ :style => "height: 200px;" }
+  .inner_spacer
 
   = link_to I18n.t('doorkeeper.authorizations.buttons.back_to_your_application'), @pre_auth.redirect_uri, class: "btn btn-custom btn-block"

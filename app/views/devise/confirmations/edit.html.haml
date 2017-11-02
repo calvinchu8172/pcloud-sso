@@ -19,13 +19,13 @@
     = f.input :email, label: I18n.t("user.labels.email"), wrapper_html: { class: 'has-feedback' } do
       = f.input_field :email, placeholder: I18n.t('user.labels.email'), autofocus: true, class: 'form-control', required: true
       = content_tag 'span', image_tag("email-gray.png"), class: 'form-control-feedback'
-      
+
       - if flash[:alert]
         %span.help-block.alert-custom= flash[:alert]
       - elsif flash[:notice]
         %span.help-block.alert-custom= flash[:notice]
 
-      .spacer{ :style => "height: 200px;" }
+      .inner_spacer
       = f.button :submit, I18n.t('labels.submit'), class: 'btn-custom btn-block'
 
     .btn-cancel

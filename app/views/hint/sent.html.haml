@@ -5,12 +5,9 @@
     %h4
       = fa_icon('check-circle-o')
       = I18n.t("warnings.sent_email")
-    / %br
     %p
       = I18n.t("devise.passwords.send_instructions")
-  .spacer{ :style => "height: 220px;" }
-
-  / = link_to I18n.t("labels.submit"), "/", class: 'btn btn-custom btn-block'
+  .inner_spacer
   = link_to I18n.t("labels.confirm"), root_path, class: 'btn btn-custom btn-block'
   .btn-cancel
     = link_to I18n.t("labels.resend_confirmation"), new_user_password_path

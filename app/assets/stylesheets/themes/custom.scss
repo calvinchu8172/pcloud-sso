@@ -33,6 +33,13 @@
   }
 }
 
+@media (max-width: 320px)
+{
+  .btn-auth-deny {
+    font-size: 12px;
+  }
+}
+
 .btn-round {
   width: 40px;
   height: 40px;
@@ -92,8 +99,19 @@
 
 .inner_title {
   min-height: 20px;
-  margin: 40px 0 10px 10px;
-  // font-weight: bold;
+  margin: 40px 10px 10px 10px;
+}
+
+@media (max-width: 320px)
+{
+  .inner_title {
+    min-height: 20px;
+    margin: 10px 10px 10px 10px;
+    h4 {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
 }
 
 .alert-custom {
@@ -195,6 +213,14 @@ span.radio_button_gender {
   color: #000;
   width: 30%;
   margin-bottom: 10px;
+}
+
+@media (max-width: 320px)
+{
+  .select-style {
+    height: 30px;
+    font-size: 12px;
+  }
 }
 
 .terms_and_edm {

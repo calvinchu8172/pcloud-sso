@@ -24,7 +24,7 @@
       = content_tag 'span', class: 'form-control-feedback password-meter-wrapper' do
         .password-meter-anchor
 
-    .spacer{ :style => "height: 180px;" }
+    .inner_spacer
 
     - if params[:title] == 'bind_account'
       = f.button :submit, I18n.t('labels.bind_account'), class: 'btn-custom btn-block', data: { disable_with: I18n.t('labels.wait') }

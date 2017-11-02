@@ -23,15 +23,12 @@
       = I18n.t("devise.confirmations.confirm_before")
       %b= confirmation_expire_time_string
 
-  .spacer{ :style => "height: 150px;" }
+  .inner_spacer
 
   = simple_form_for resource, as: resource_name, url: confirmation_path(resource_name), method: :post do |f|
     = f.hidden_field :email, value: current_user.email, wrapper_html: { class: 'has-feedback' }
     = f.submit I18n.t("devise.confirmations.resend"), class: "btn btn-custom btn-block"
 
-  / = link_to I18n.t("labels.confirm"), root_path, class: 'btn btn-custom btn-block'
-  / .btn-cancel
-  /   = link_to I18n.t("labels.resend_confirmation"), new_user_password_path, class: 'btn-cancel'
   .btn-cancel
     = link_to I18n.t("devise.confirmations.change_account"), users_confirmation_edit_path
   - if current_user && current_user.confirmation_valid?
