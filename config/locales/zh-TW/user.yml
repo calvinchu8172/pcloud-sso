@@ -27,7 +27,7 @@ zh-TW:
       remember_me: "記住我"
       language: "偏好語系"
       captcha: "驗証碼"
-      new_to_cloud: "第一次到 myZyxelCloud"
+      new_to_cloud: "第一次到 myZyxelCloud?"
       create_account: "建立帳號"
       terms:
         instruction: "我同意並且瞭解"

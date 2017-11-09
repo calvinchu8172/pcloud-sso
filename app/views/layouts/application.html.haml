@@ -11,30 +11,27 @@
     / HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     / WARNING: Respond.js doesn't work if you view the page via file://
     / [if lt IE 9]
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css'
     = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js'
     = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js'
 
     = csrf_meta_tags
 
-  %body{ data: { controller: controller_name, action: action_name } }
+  %body{ data: { controller: controller_name, action: action_name }, class: yield(:wrapper_class) }
     = render 'layouts/gtm'
-    .out
-      .in
-        .container-fluid.hidden-xs
-          .space
-        .log-out
-          = render 'layouts/log_out'
-        .main.container-fluid
-          .logo
-            = link_to "", root_path, html_options = { :style => "display: block; width: 120px; height: 48px;" }
-          .title
-            = yield :title
-          .precontent
-            = yield :precontent
-          .content
-            = yield
-          - if current_path?(:sessions, [:new, :create])
-            .postcontent
-              = yield :postcontent
-          %footer{ class: (current_path?(:sessions, [:new, :create]) ? 'sign_in' : 'normal') }
-            = I18n.t('user.labels.copy_right', current_year: DateTime.now.year)
+    .log-out
+      = render 'layouts/log_out'
+    .main.container-fluid
+      .logo{ class: yield(:sign_in_wrapper_class) }
+        = link_to image_tag("zyxel-logo.png"), root_path
+      .title
+        = yield :title
+      .precontent
+        = yield :precontent
+      .content
+        = yield
+      - if current_path?(:sessions, [:new, :create])
+        .postcontent
+          = yield :postcontent
+      %footer{ class: (current_path?(:sessions, [:new, :create]) ? 'sign_in' : 'normal') }
+        = I18n.t('user.labels.copy_right', current_year: DateTime.now.year)

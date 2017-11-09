@@ -18,12 +18,12 @@ footer {
   }
 }
 
-@media (min-width: 411px) and (max-width: 430px) // iPhone 6s plus
+@media (min-width: 376px) and (max-width: 425px) // iPhone 6s plus
 {
   footer {
     &.sign_in {
       color: #b3b3b3;
-      margin-top: 70px;
+      margin-top: -25px;
       bottom: 0px;
     }
     &.normal {

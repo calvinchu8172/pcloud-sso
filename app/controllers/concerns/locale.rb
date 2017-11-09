@@ -2,8 +2,10 @@ module Locale
   extend ActiveSupport::Concern
 
   included do
+    include ActionView::Helpers::TagHelper
 
     prepend_before_action :set_locale
+    helper_method :flag_icon
 
     def set_locale
       # note: cookie(change before) > user.lang(registered) > browser > default
@@ -68,6 +70,22 @@ module Locale
        accept_locales << l.to_sym
       end
       (accept_locales.select { |l| I18n.available_locales.include?(l) }).first
+    end
+
+    # flag icon method
+    def flag_icon(locale, html_options = {})
+      # 根據 locale 取得 country_code
+      country_code = locale.to_s.slice(-2..-1).downcase
+      # 如果 country_code 是 en 則指定為 us
+      country_code = 'us' if country_code == 'en'
+      country_code = 'cz' if country_code == 'cs'
+      # content class
+      content_class = "flag-icon flag-icon-#{country_code}"
+      content_class << ' flag-icon-squared' if html_options.delete(:squared)
+      content_class << " #{html_options[:class]}" if html_options.key?(:class)
+      html_options[:class] = content_class
+      # 產生 flag icon span
+      content_tag :span, nil, html_options
     end
   end
 end

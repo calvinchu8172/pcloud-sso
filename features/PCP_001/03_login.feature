@@ -7,7 +7,7 @@ Feature: [PCP_001_03] Login
   Scenario Outline: [PCP_001_03_01]
     Show valid language when user change language
     Given the user change language <Language>
-     Then the user should see Sign In word in correct language
+     # Then the user should see Sign In word in correct language
       And the user language information will be changed after user login to system
     Examples:
       | Language       |

@@ -113,23 +113,6 @@
   }
 }
 
-.inner_title {
-  min-height: 20px;
-  margin: 40px 10px 10px 10px;
-}
-
-@media (max-width: 320px)
-{
-  .inner_title {
-    min-height: 20px;
-    margin: 10px 10px 10px 10px;
-    h4 {
-      font-size: 12px;
-      font-weight: normal;
-    }
-  }
-}
-
 .alert-custom {
   margin-top: 10px;
   margin-bottom: 10px;

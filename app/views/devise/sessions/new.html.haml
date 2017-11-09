@@ -1,6 +1,8 @@
-- content_for :title do
-  .title_sign_in
-    = I18n.t('titles.sign_in')
+- content_for :wrapper_class, 'vertical_align_center'
+- content_for :sign_in_wrapper_class, 'sign_in'
+/ - content_for :title do
+/   .title_sign_in
+/     = I18n.t('titles.sign_in')
 
 / .white_email
 - unless Settings.environments.name == 'production'
@@ -52,13 +54,15 @@
   .locale_and_help
     .locale.col-xs-6.col-sm-6.col-md-6.col-lg-6
       .dropdown
-        %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => "#" }
+        / %a.dropdown-toggle{ "data-toggle" => "dropdown", :href => "#" }
+        %a.dropdown-toggle{ 'data-target' => '#locales-modal', 'data-toggle' => 'modal', :href => "#" }
           .language=image_tag("#{theme}/icon-language.png")
           .language=I18n.t('labels.language')
           .language=image_tag("#{theme}/arrow-down.png")
-        %ul.dropdown-menu{ :role => "menu" }
-          - @options_path.each do |l, value|
-            %li=link_to l, value
+        = render 'devise/shared/locales'
+        / %ul.dropdown-menu{ :role => "menu" }
+        /   - @options_path.each do |l, value|
+        /     %li=link_to l, value
 
     .help.col-xs-6.col-sm-6.col-md-6.col-lg-6
       .help_wrapper

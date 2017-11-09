@@ -1,0 +1,7 @@
+@mixin vertical-align-center() {
+  // position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -3,21 +3,23 @@ body {
   font-family: "Century Gothic", "CenturyGothic", "AppleGothic", sans-serif, "微軟正黑體";
   font-size: 16px;
 
-  .space {
-    height: 50px;
-  }
-
   .main {
     max-width: 430px;
-    margin: auto;
+    margin: 50px auto 0 auto;
     padding: 0;
     box-shadow: 0px 0px 50px -20px #888888;
 
     .logo {
       width: 120px;
       height: 48px;
-      background: image-url('zyxel-logo.png') no-repeat center;
       margin: 38px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      img {
+        display: block;
+        margin: auto;
+      }
     }
 
     .title {
@@ -48,6 +50,8 @@ body {
       }
       .content_wrapper {
         .inner_title {
+          min-height: 20px;
+          margin: 10px 10px 10px 10px;
           h4 {
             font-weight: bold;
           }
@@ -164,7 +168,11 @@ body {
 {
   body {
     font-size: 16px;
+    &.vertical_align_center  {
+      @include vertical-align-center();
+    }
     .main {
+      margin: 0;
       .title {
         font-size: 16px;
       }
@@ -189,7 +197,16 @@ body {
 {
   body {
     font-size: 14px;
+    &.vertical_align_center  {
+      @include vertical-align-center();
+    }
     .main {
+      margin: 0;
+      .logo {
+        &.sign_in {
+          // margin: 100px auto -20px auto;
+        }
+      }
       .title {
         font-size: 14px;
       }
@@ -213,89 +230,88 @@ body {
 {
   body {
     font-size: 12px;
-
-    .out:before {
-      content: '';
-      display: inline-block;
-      // height: 100%;
-      height: 100vh;
-      vertical-align: middle;
+    &.vertical_align_center  {
+      @include vertical-align-center();
     }
 
-    .out{
-      height: 100vh;
-
-      .in {
-        display: inline-block;
-        vertical-align: middle;
-        width: 100%;
-
-        .main {
-          .logo {
-            margin: -10px auto -10px auto;
+    .main {
+      margin: 0;
+      .logo {
+        margin: 0px auto 0 auto;
+        &.sign_in {
+          margin: -10px auto 0 auto;
+        }
+      }
+      .title {
+        font-size: 12px;
+        margin: 0 auto;
+        .title_sign_in {
+          margin: -5px auto 0px auto;
+        }
+      }
+      // 關掉陰影
+      box-shadow: 0px 0px 0px 0px;
+      .content {
+        font-size: 12px;
+        .content_wrapper {
+          .inner_title {
+            min-height: 20px;
+            margin: 10px 10px 10px 10px;
+            h4 {
+              font-size: 12px;
+              font-weight: normal;
+            }
           }
-          .title {
+          &.sign_in {
+            padding: 10px 15px 10px 15px;
+            background:
+              // image-url('up_cover.svg') top no-repeat,
+              // image-url('bottom_cover.svg') bottom no-repeat,
+              image-url('#{$theme-type}/clouds.png') top -13px left 0px no-repeat,
+              image-url('#{$theme-type}/rainbow.png') bottom -30px right -23px no-repeat;
+            background-color: $bg-color;
+          }
+          &.normal {
+            // min-height: 501px;
+            min-height: 100%;
+            padding: 10px 15px 35px 15px;
+          }
+        }
+      }
+      .postcontent {
+        min-height: 105px;
+        .oauth {
+          margin: 0px auto;
+          .or {
             font-size: 12px;
-            margin: 0 auto;
-            .title_sign_in {
-              margin: -5px auto 0px auto;
-            }
+            margin: 0px auto -10px auto;
           }
-          // 關掉陰影
-          box-shadow: 0px 0px 0px 0px;
-          .content {
-            font-size: 12px;
-            .content_wrapper {
-              &.sign_in {
-                padding: 10px 15px 10px 15px;
-                background:
-                  // image-url('up_cover.svg') top no-repeat,
-                  // image-url('bottom_cover.svg') bottom no-repeat,
-                  image-url('#{$theme-type}/clouds.png') top -13px left 0px no-repeat,
-                  image-url('#{$theme-type}/rainbow.png') bottom -30px right -23px no-repeat;
-                background-color: $bg-color;
-              }
-              &.normal {
-                // min-height: 501px;
-                min-height: 100%;
-                padding: 10px 15px 35px 15px;
-              }
-            }
+          .oauth_wrapper {
+            margin: 0px auto;
+            height: 30px;
           }
-          .postcontent {
-            min-height: 105px;
-            .oauth {
-              margin: 0px auto;
-              .or {
-                font-size: 12px;
-                margin: 0px auto -10px auto;
-              }
-              .oauth_wrapper {
-                margin: 0px auto;
-                height: 30px;
-              }
-            }
-            .register {
-              margin-bottom: 0px;
-              .new_register {
-                padding-left: 15px;
-              }
-              .create_account {
-                padding-left: 15px;
-              }
-            }
-            .locale_and_help {
-              height: 0px;
-              margin-bottom: 0px;
-              .locale {
-                padding-left: 15px;
-              }
-            }
-          } // postcontent
-        } // main
-      } // in
-    } //out
+        }
+        .register {
+          margin-bottom: 0px;
+          .new_register {
+            padding-left: 15px;
+          }
+          .create_account {
+            padding-left: 15px;
+          }
+        }
+        .locale_and_help {
+          height: 0px;
+          margin-bottom: 0px;
+          .locale {
+            padding-left: 15px;
+          }
+        }
+      } // postcontent
+    } // main
 
   } //body
 
 }
+
+
