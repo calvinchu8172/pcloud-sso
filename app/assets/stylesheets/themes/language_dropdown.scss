@@ -37,12 +37,11 @@
 
 .dropdown {
   .dropdown-toggle {
-  // > a {
     display: block;
     height: 30px;
     width: 156px;
     background-color: $btn-color-light;
-    // background-color: lighten($btn-color, 40%);
+    text-decoration: none;
     @include transition(background, 0.3s);
 
     // 讓內部的子元件平均分布
@@ -57,39 +56,11 @@
     .language {
       color: #000;
       line-height: 30px;
-    }
-
-    // .icon-language {
-    //   float:left;
-    //   line-height: 30px;
-    // }
-    // .language {
-    //   color: #000;
-    //   float:left;
-    //   line-height: 30px;
-    //   width: 60%;
-    //   text-align: center;
-    // }
-    // .icon-angle-down{
-    //   float:left;
-    //   line-height: 30px;
-    // }
-
-    &:hover, &:focus{
-      // color: $zyxel_white;
-      // background-color: darken($btn-color-light, 25%);  /* Rewrite bootstrap nav css*/
-      background-color: $bg-color;
-      text-decoration: none;
-      .language {
-        color: #fff;
-        @include transition(color, 0.3s);
-      }
+      @include transition(background, 0.3s);
     }
   }
 
   .dropdown-menu {
-    // right:0;
-    // left: inherit;
     li a {
       color: #8c8c8c;
       font-weight: normal;
@@ -101,5 +72,17 @@
         background-color: $bg-color;
       }
     }
+  }
+}
+
+
+.dropdown-toggle-hover {
+  background-color: $bg-color !important;
+  color: #fff !important;
+  .language {
+    color: #fff !important;
+  }
+  .language:nth-child(3) {
+    transform: rotate(180deg);
   }
 }

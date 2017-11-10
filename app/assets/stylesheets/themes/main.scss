@@ -11,8 +11,8 @@ body {
 
     .logo {
       width: 120px;
-      height: 48px;
-      margin: 38px auto 0 auto;
+      height: 30px;
+      margin: 30px auto 0 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -32,6 +32,7 @@ body {
       }
 
     }
+
     .precontent {
       max-width: 430px;
     }
@@ -58,7 +59,7 @@ body {
         }
         color: #fff;
         &.sign_in {
-          padding: 25px 30px 25px 30px;
+          padding: 15px 20px 15px 20px;
           background:
             // image-url('up_cover.svg') top no-repeat,
             // image-url('bottom_cover.svg') bottom no-repeat,
@@ -105,7 +106,6 @@ body {
       }
       .oauth_wrapper {
         height: 40px;
-        // margin-bottom: 20px;
         margin-bottom: 12px;
         .facebook {
           padding-right: 11px;
@@ -117,22 +117,16 @@ body {
     }
 
     .register {
-      // margin-bottom: 20px;
-      margin-bottom: 12px;
-      .new_register {
-        color: #8C8C8C;
-        padding-left: 40px;
-      }
-      .create_account {
-        padding-left: 40px;
-        a.create_account_link {
-          color: $bg-color;
+      color: #8C8C8C;
+      text-align: center;
+      margin: 20px auto;
+      a.create_account_link {
+        color: $bg-color;
+        font-weight: bold;
+        text-decoration: underline;
+        &:hover {
+          color: darken($bg-color, 10%);
           font-weight: bold;
-          text-decoration: underline;
-          &:hover {
-            color: darken($bg-color, 10%);
-            font-weight: bold;
-          }
         }
       }
     }
@@ -173,6 +167,11 @@ body {
     }
     .main {
       margin: 0;
+      .logo {
+        &.sign_in {
+          margin: 0 auto;
+        }
+      }
       .title {
         font-size: 16px;
       }
@@ -204,7 +203,7 @@ body {
       margin: 0;
       .logo {
         &.sign_in {
-          // margin: 100px auto -20px auto;
+          margin: 0 auto;
         }
       }
       .title {
@@ -221,7 +220,6 @@ body {
           }
         }
       }
-
     } //main
   }
 }
@@ -237,9 +235,8 @@ body {
     .main {
       margin: 0;
       .logo {
-        margin: 0px auto 0 auto;
         &.sign_in {
-          margin: -10px auto 0 auto;
+          margin: 0 auto;
         }
       }
       .title {
@@ -292,13 +289,7 @@ body {
           }
         }
         .register {
-          margin-bottom: 0px;
-          .new_register {
-            padding-left: 15px;
-          }
-          .create_account {
-            padding-left: 15px;
-          }
+          margin: 5px auto;
         }
         .locale_and_help {
           height: 0px;
