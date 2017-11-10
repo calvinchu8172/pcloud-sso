@@ -12,13 +12,18 @@ body {
     .logo {
       width: 120px;
       height: 30px;
-      margin: 30px auto 0 auto;
+      margin: 40px auto 20px auto;
+      // margin: 30px auto 0px auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      &.sign_in {
+        margin: 40px auto;
+      }
       img {
         display: block;
         margin: auto;
+        zoom: 1.5;
       }
     }
 
@@ -168,6 +173,10 @@ body {
     .main {
       margin: 0;
       .logo {
+        margin: 30px auto 0px auto;
+        img {
+          zoom: 1.0;
+        }
         &.sign_in {
           margin: 0 auto;
         }
@@ -202,6 +211,10 @@ body {
     .main {
       margin: 0;
       .logo {
+        margin: 30px auto 0px auto;
+        img {
+          zoom: 1.0;
+        }
         &.sign_in {
           margin: 0 auto;
         }
@@ -235,6 +248,10 @@ body {
     .main {
       margin: 0;
       .logo {
+        margin: 30px auto 0px auto;
+        img {
+          zoom: 1.0;
+        }
         &.sign_in {
           margin: 0 auto;
         }
