@@ -34,12 +34,6 @@ environments:
       default:
         s3_host_name: 's3-us-west-2.amazonaws.com'
         path: '/:class/:attachment/:id_partition/:style/:filename'
-  sqs:
-    name: 'PCloud-Alpha-Bot-Jobs-Test'
-    attributes:
-      access_key_id:
-      secret_access_key:
-      region: 'us-east-1'
   ddns: pcloud.ecoworkinc.com
   upnp:
     random_port_max: '10000'

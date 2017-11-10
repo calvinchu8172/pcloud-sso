@@ -1,1 +1,0 @@
-AWS.config(region: Settings.environments.sqs.attributes.region)
