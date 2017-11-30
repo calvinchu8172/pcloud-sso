@@ -64,7 +64,7 @@ body {
         }
         color: #fff;
         &.sign_in {
-          padding: 15px 20px 15px 20px;
+          padding: 35px;
           background:
             // image-url('up_cover.svg') top no-repeat,
             // image-url('bottom_cover.svg') bottom no-repeat,
@@ -253,7 +253,7 @@ body {
           zoom: 1.0;
         }
         &.sign_in {
-          margin: 0 auto;
+          margin: 0 auto 10px auto;
         }
       }
       .title {
@@ -277,11 +277,11 @@ body {
             }
           }
           &.sign_in {
-            padding: 10px 15px 10px 15px;
+            padding: 15px;
             background:
               // image-url('up_cover.svg') top no-repeat,
               // image-url('bottom_cover.svg') bottom no-repeat,
-              image-url('#{$theme-type}/clouds.png') top -13px left 0px no-repeat,
+              image-url('#{$theme-type}/clouds.png') top -5px left 0px no-repeat,
               image-url('#{$theme-type}/rainbow.png') bottom -30px right -23px no-repeat;
             background-color: $bg-color;
           }
